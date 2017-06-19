@@ -40,3 +40,11 @@ It is a project for Udacity's Full Stack Web Development Nanodegree.
 * Flask-Bcrypt
 * Requests
 * Psycopg2
+
+## Useful Resources
+
+* Installing Flask on Apache: [Flask docs](http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/) and [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+* Using Git to deploy on Ubuntu: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps)
+* Installing and Configuring PostreSQL: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
+* Securing PostgreSQL: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
+* Setting permissions within `/var/www`: https://askubuntu.com/a/493401
