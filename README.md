@@ -1,65 +1,42 @@
-# Course Catalog
+# Course Catalog Deploy to Linux Server
 
-A simple course catalog.
+This is a fork of my [Course Catalog project](https://github.com/byanofsky/course_catalog)
 
-Users can add courses and organize them by school and category.
+This contains the project files and information for deploying to my configured Linux server.
 
-Users are able to create accounts or log in through OAuth providers.
+It is a project for Udacity's Full Stack Web Development Nanodegree.
 
-Item Catalog project for Udacity Full Stack Nanodegree, built with
-Flask framework, using Flask-SQLAlchemy.
+## IP Address of Server
 
-## Dependencies
+54.202.21.35
 
-Python 2.7.x
+## Software Installed on Server
 
-All other dependencies will be installed during setup below.
+* Python 2.7.12
+* Apache2
+* mod_wsgi
+* PostgreSQL
 
-## Installation
+## Configurations Made to Server
 
-1. Clone this repository to your local machine
-2. `cd` to `course_catalog/course_catalog`
-3. [Optional, but highly recommended] Create a new virtual environment using
-[virtualenv](https://pypi.python.org/pypi/virtualenv).
-```
-virtualenv venv
-. venv/bin/activate
-```
-4. Run `pip install --editable .` This will install all needed dependencies.
-5. Create an instance directory to store database and configuration files:
-```
-mkdir instance
-```
-6. Copy the default config file to the `instance` directory:
-```
-cp course_catalog/default_config.py instance/config.py
-```
-7. Open the newly created `config.py` and add a SECRET_KEY as well as IDs and Secret Keys for all OAuth providers
-8. Start python in your terminal. Run the code below to create the database:
-```
-from course_catalog.course_catalog import *
-init_db()
-```
-9. Run the following in your command line to assign the flask app:
-```
-export FLASK_APP=course_catalog
-```
-10. Turn on debug mode on development only. If it is production, turn this off (0):
-```
-export FLASK_DEBUG=1
-```
-11. Start the application with `flask run`
-12. Open `localhost:5000` in your browser
+1. Update all packages
+2. Change SSH port to 2200
+3. Open ports 2200, 80, and 123 on Amazon Lightsail and within UFW
+4. Enable UFW
+5. Add user `grader` and add grader to `sudo` group
+6. Add user `course_catalog`
+7. Configure timezone to UTC
+8. Install Apache, mod_wsgi, pip, and virtualenv
+9. Install PostgreSQL, create user `course_catalog`, and create database `course_catalog`
+10. Install Git and push project to server
+11. Configure Apache Virtual Host and WSGI to work with Flask application. Found help from [Flask docs](http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/) and [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+12. Git push application to server and set up Flask on virtualenv
+13. Adjust permissions within project directory
 
-## Testing
+## Third Party Software Used in Application
 
-To run testing suite:
-```
-python tests/test_course_catalog.py
-```
-
-## TODO
-
-* Add additional functionality.
-* Finetune this README file.
-* Add to the testing suite.
+* Flask
+* Flask-SQLAlchemy
+* Flask-Bcrypt
+* Requests
+* Psycopg2
